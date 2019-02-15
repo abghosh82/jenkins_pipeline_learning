@@ -31,10 +31,5 @@ pipeline {
 	    echo "Performance Test"
 	  }
 	}
-	stage('Six') {
-	  steps {
-	    echo "Performance Test"
-	  }
-	}
   }
 }
