@@ -13,6 +13,7 @@ pipeline {
 	    echo "Learning jenkins pipeline"
 		echo "Move the deployable app to correct location."
 		sh "ls -l"
+		sh "rm -rf /deployment_area/deployable_app"
 		sh "mkdir /deployment_area/deployable_app"
 		sh "cp -r . /deployment_area/deployable_app/."
 	  }
