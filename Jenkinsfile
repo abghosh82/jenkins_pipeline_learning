@@ -6,13 +6,13 @@ pipeline {
 	    echo "Hi, this is abhijeet ghosh"
 		echo "Start cloning the deployable app repo."
 		git url: 'https://github.com/abghosh82/deployable_app.git'
-		sh "ls -l"
 	  }
 	}
 	stage('Two') {
 	  steps {
 	    echo "Learning jenkins pipeline"
 		echo "Move the deployable app to correct location."
+		sh "ls -l"
 		sh "cp -r deployable_app /deployment_area/."
 	  }
 	}
