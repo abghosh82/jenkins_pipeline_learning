@@ -5,16 +5,14 @@ pipeline {
 	  steps {
 	    echo "Hi, this is abhijeet ghosh"
 		echo "Start cloning the deployable app repo."
-		def gitURL = 'https://github.com/abghosh82/deployable_app.git'
-		def branchName = 'master'
-		checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[ url: "${gitURL}"]]])
+		git url: 'https://github.com/abghosh82/deployable_app.git'
 	  }
 	}
 	stage('Two') {
 	  steps {
 	    echo "Learning jenkins pipeline"
 		echo "Move the deployable app to correct location."
-		sh "sudo cp -r deployable_app /deployment_area/."
+		sh "cp -r deployable_app /deployment_area/."
 	  }
 	}
 	stage('Three') {
