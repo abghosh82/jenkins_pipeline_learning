@@ -12,14 +12,15 @@ pipeline {
 	  steps {
 	    echo "Learning jenkins pipeline"
 		echo "Move the deployable app to correct location."
-		sh "ls -l ../"
-		sh "cp -r ../deployable_app /deployment_area/."
+		sh "ls -l"
+		sh "mkdir /deployment_area/deployable_app"
+		sh "cp -r . /deployment_area/deployable_app/."
 	  }
 	}
 	stage('Three') {
 	  steps {
 	    echo "Deploy"
-		sh "/deployment_area/deployable_app.sh"
+		sh "/deployment_area/deployable_app/deployable_app.sh"
 	  }
 	}
 	stage('Four') {
