@@ -5,7 +5,9 @@ pipeline {
 	  steps {
 	    echo "Hi, this is abhijeet ghosh"
 		echo "Start cloning the deployable app repo."
-		git url: 'https://github.com/abghosh82/deployable_app.git'
+		def gitURL = 'https://github.com/abghosh82/deployable_app.git'
+		def branchName = 'master'
+		checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[ url: "${gitURL}"]]])
 	  }
 	}
 	stage('Two') {
