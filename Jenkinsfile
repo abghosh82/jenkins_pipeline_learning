@@ -21,7 +21,7 @@ pipeline {
 	stage('Three') {
 	  steps {
 	    echo "Deploy"
-		sh "/deployment_area/deployable_app/deployable_app.sh"
+		sh "bash /deployment_area/deployable_app/deployable_app.sh"
 	  }
 	}
 	stage('Four') {
